@@ -1,11 +1,19 @@
 {
   "name": "BySun",
-  "version": "1.0",
+  "version": "1.0.0",
   "manifest_version": 2,
+  "description": "A weather App.",
+  "author": "Aniumbott",
+  "offline_enabled": false,
   "browser_action": {
     "default_popup": "index.html",
     "default_icon": "./icons/logo.png"
   },
-  "icons": "./icons/logo.png",
-  "permissions": ["geolocation"]
+  "icons": {
+    "128": "./icons/logo.png"
+  },
+  "permissions": [
+    "geolocation",
+    "activeTab"
+  ]
 }

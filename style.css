@@ -1,0 +1,41 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background: transparent;
+}
+
+:root {
+  --morning: linear-gradient(to bottom, rgb(68, 124, 207), rgb(159, 189, 235));
+  --evening: linear-gradient(to bottom, #ff977a, rgb(250, 222, 145));
+  --night: linear-gradient(to bottom, rgb(13, 12, 14), rgb(20, 11, 61));
+}
+
+@font-face {
+  font-family: comforta;
+  src: url("./fonts/Comfortaa-VariableFont_wght.ttf");
+}
+
+body {
+  font-family: "comforta", sans-serif;
+  background-repeat: no-repeat;
+  background: transparent;
+}
+
+main {
+  background: var(--morning);
+  height: 250px;
+  width: 350px;
+  border: solid 8px white;
+  border-top: none;
+}
+
+.title {
+  text-align: center;
+  width: 100%;
+  background: white;
+  color: rgb(255, 60, 0);
+  font-weight: 300;
+  font-size: 0.8rem;
+  padding: 0.3rem;
+}
