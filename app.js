@@ -10,8 +10,6 @@ async function weather() {
     )
       .then((response) => response.json())
       .then((data) => {
-        console.log(data);
-
         // set location
         document.querySelector(".location").innerText = data.name;
         document.querySelector(
@@ -48,7 +46,6 @@ async function weather() {
 
         // getBg
         function getBg() {
-          console.log(today.getHours());
           if (today.getHours() < 14 && today.getHours() > 5) {
             return "var(--morning)";
           } else if (today.getHours() < 18 && today.getHours() > 14) {
@@ -58,6 +55,9 @@ async function weather() {
           }
         }
       });
+
+    //appear everything
+    document.querySelector("body").style.opacity = "1";
   };
   const error = (error) => {
     console.log(error);
