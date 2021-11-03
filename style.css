@@ -5,10 +5,16 @@
   background: transparent;
 }
 
+a {
+  color: black;
+  text-decoration: none;
+}
+
 :root {
-  --morning: linear-gradient(to bottom, rgb(68, 124, 207), rgb(159, 189, 235));
-  --evening: linear-gradient(to bottom, #ff977a, rgb(250, 222, 145));
-  --night: linear-gradient(to bottom, rgb(13, 12, 14), rgb(20, 11, 61));
+  --morning: rgb(199, 199, 199);
+  --evening: #ff977a;
+  --night: rgb(19, 17, 37);
+  --bg: var(--morning);
 }
 
 @font-face {
@@ -20,14 +26,9 @@ body {
   font-family: "comforta", sans-serif;
   background-repeat: no-repeat;
   background: transparent;
-}
-
-main {
-  background: var(--morning);
   height: 250px;
-  width: 350px;
-  border: solid 8px white;
-  border-top: none;
+  width: 450px;
+  background: black;
 }
 
 .title {
@@ -38,4 +39,96 @@ main {
   font-weight: 300;
   font-size: 0.8rem;
   padding: 0.3rem;
+}
+
+main {
+  background: linear-gradient(
+    white 0%,
+    white 50%,
+    var(--bg) 50%,
+    var(--bg) 100%
+  );
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.data {
+  background: white;
+  width: 300px;
+  border: none;
+  border-bottom-right-radius: 50%;
+  /* border-top-right-radius: 50%; */
+}
+
+.date-location {
+  color: rgb(105, 105, 105);
+  font-size: 0.8rem;
+  display: flex;
+  margin: 0.5rem;
+}
+
+.date-location svg {
+  padding: 0;
+  height: 0.8rem;
+  fill: rgb(105, 105, 105);
+}
+
+.forcast {
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+  padding: 1rem 0rem 0rem 1rem;
+  color: rgb(105, 105, 105);
+}
+
+.forcast p {
+  font-weight: 100;
+  font-size: 0.7rem;
+  padding-bottom: 1rem;
+}
+
+.forcast span {
+  font-weight: 100;
+  font-size: 5rem;
+}
+
+.data hr {
+  margin: 0rem auto;
+  width: 80%;
+  background: rgb(214, 214, 214);
+  border: none;
+  height: 0.1rem;
+}
+
+.wind {
+  align-items: center;
+  font-size: 0.6rem;
+  padding: 0.6rem 0rem 0rem 1.5rem;
+  color: rgb(105, 105, 105);
+}
+
+.wind svg {
+  fill: rgb(105, 105, 105);
+  height: 1rem;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-top-left-radius: 50%;
+  padding: 1rem;
+  background: var(--bg);
+  overflow: hidden;
+}
+
+.logo {
+  max-height: 10rem;
+}
+
+.logo img {
+  padding: 0;
+  height: 10rem;
+  object-fit: cover;
 }
