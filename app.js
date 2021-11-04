@@ -2,13 +2,14 @@ async function weather() {
   const success = (position) => {
     const long = position.coords.longitude;
     const lat = position.coords.latitude;
-    const key = "f176eed0288c45eeb7aa226b6032af2e";
+    const key = "de32868fbfca4aaaae9e9c93373ad3b6	";
 
     fetch(
       `https://api.weatherbit.io/v2.0/current?lat=${lat}&lon=${long}&key=${key}&include=minutely`
     )
       .then((response) => response.json())
       .then((data) => {
+        console.log(data);
         // set location
         document.querySelector(".location").innerText = data.data[0].city_name;
         document.querySelector(

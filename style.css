@@ -43,6 +43,7 @@ body {
 
 .bg-img img {
   width: 450px;
+  pointer-events: none;
 }
 
 main {
