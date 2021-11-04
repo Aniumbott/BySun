@@ -84,7 +84,7 @@ async function weather() {
       })
       .then(() => {
         //appear everything
-        document.querySelector(".bg-img").style.opacity = "0";
+        document.querySelector(".bg-img").style.display = "none";
       });
   };
   const error = (error) => {
