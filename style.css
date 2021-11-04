@@ -23,13 +23,26 @@ a {
 }
 
 body {
-  opacity: 0;
   font-family: "comforta", sans-serif;
   background-repeat: no-repeat;
   background: transparent;
   height: 250px;
   width: 450px;
   background: rgb(172, 172, 172);
+}
+
+.bg-img {
+  max-height: 250px;
+  opacity: 1;
+  display: flex;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  z-index: 5;
+}
+
+.bg-img img {
+  width: 450px;
 }
 
 main {

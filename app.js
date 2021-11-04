@@ -9,7 +9,6 @@ async function weather() {
     )
       .then((response) => response.json())
       .then((data) => {
-        console.log(data);
         // set location
         document.querySelector(".location").innerText = data.data[0].city_name;
         document.querySelector(
@@ -84,7 +83,7 @@ async function weather() {
       })
       .then(() => {
         //appear everything
-        document.querySelector("body").style.opacity = "1";
+        document.querySelector(".bg-img").style.opacity = "0";
       });
   };
   const error = (error) => {
