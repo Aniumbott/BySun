@@ -49,7 +49,8 @@ async function weather() {
           Math.round(data.data[0].wind_spd * 100) / 100 + " m/s";
 
         // set humid
-        document.querySelector(".humid").innerText = data.data[0].rh + " %";
+        document.querySelector(".humid").innerText =
+          Math.round(data.data[0].rh * 100) / 100 + " %";
 
         // set logo
         document.querySelector(
