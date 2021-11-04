@@ -34,7 +34,18 @@ async function weather() {
         ];
         const date = today.getDate() + "/" + monthNames[today.getMonth()];
         document.querySelector(".date").innerText =
-          date + " - " + today.getHours() + ":" + today.getMinutes();
+          date +
+          " - " +
+          (today.getHours() % 12) +
+          ":" +
+          today.getMinutes() +
+          " " +
+          getZone();
+
+        function getZone() {
+          if (today.getHours <= 12) return "am";
+          else return "pm";
+        }
 
         // set temp
         document.querySelector(".temp").innerText =
@@ -64,7 +75,7 @@ async function weather() {
         function getBg() {
           if (today.getHours() < 14 && today.getHours() > 5) {
             return "var(--morning)";
-          } else if (today.getHours() < 18 && today.getHours() > 14) {
+          } else if (today.getHours() < 18 && today.getHours() >= 14) {
             return "var(--evening)";
           } else {
             return "var(--night)";

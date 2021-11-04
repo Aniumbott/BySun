@@ -12,7 +12,7 @@ a {
 
 :root {
   --morning: rgb(164, 212, 235);
-  --evening: #ff977a;
+  --evening: #ffecb7;
   --night: rgb(19, 17, 37);
   --bg: var(--morning);
 }
