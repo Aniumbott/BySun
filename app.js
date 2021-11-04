@@ -2,19 +2,19 @@ async function weather() {
   const success = (position) => {
     const long = position.coords.longitude;
     const lat = position.coords.latitude;
-    // const ckey = "ccabc05dcf4fe1564f2aeb09ff253ba1";
-    const wkey = "e7d6c7eac5711442a2c962247f1b162a";
+    const key = "f176eed0288c45eeb7aa226b6032af2e";
 
     fetch(
-      `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&appid=${wkey}&units=metric`
+      `https://api.weatherbit.io/v2.0/current?lat=${lat}&lon=${long}&key=${key}&include=minutely`
     )
       .then((response) => response.json())
       .then((data) => {
+        console.log(data);
         // set location
-        document.querySelector(".location").innerText = data.name;
+        document.querySelector(".location").innerText = data.data[0].city_name;
         document.querySelector(
           ".location"
-        ).href = `https://www.google.com/maps/place/${data.name}`;
+        ).href = `https://www.google.com/maps/place/${data.data[0].city_name}`;
 
         // set date
         const today = new Date();
@@ -38,18 +38,23 @@ async function weather() {
 
         // set temp
         document.querySelector(".temp").innerText =
-          parseInt(data.main.temp) + "॰";
+          parseInt(data.data[0].temp) + "॰";
 
         // set desc
-        document.querySelector(".sky").innerText = data.weather[0].description;
+        document.querySelector(".sky").innerText =
+          data.data[0].weather.description;
+
+        // set wind speed
+        document.querySelector(".wind").innerText =
+          Math.round(data.data[0].wind_spd * 100) / 100 + " m/s";
 
         // set humid
-        document.querySelector(".wind").innerText += data.main.humidity;
+        document.querySelector(".humid").innerText = data.data[0].rh + " %";
 
         // set logo
         document.querySelector(
           ".logo img"
-        ).src = `http://openweathermap.org/img/w/${data.weather[0].icon}.png`;
+        ).src = `https://www.weatherbit.io/static/img/icons/${data.data[0].weather.icon}.png`;
 
         // setting bg
         document.documentElement.style.setProperty("--bg", getBg());
@@ -64,10 +69,11 @@ async function weather() {
             return "var(--night)";
           }
         }
+      })
+      .then(() => {
+        //appear everything
+        document.querySelector("body").style.opacity = "1";
       });
-
-    //appear everything
-    document.querySelector("body").style.opacity = "1";
   };
   const error = (error) => {
     console.log(error);

@@ -11,7 +11,7 @@ a {
 }
 
 :root {
-  --morning: rgb(199, 199, 199);
+  --morning: rgb(164, 212, 235);
   --evening: #ff977a;
   --night: rgb(19, 17, 37);
   --bg: var(--morning);
@@ -29,7 +29,7 @@ body {
   background: transparent;
   height: 250px;
   width: 450px;
-  background: black;
+  background: rgb(172, 172, 172);
 }
 
 main {
@@ -102,11 +102,26 @@ main {
   height: 0.1rem;
 }
 
-.wind {
+.mini-data {
+  display: flex;
+  justify-content: flex-start;
   align-items: center;
-  font-size: 0.6rem;
-  padding: 0.6rem 0rem 0rem 1.5rem;
+  padding: 0.5rem 1rem;
+}
+
+.humid-container,
+.wind-container {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  font-size: 0.8rem;
   color: rgb(105, 105, 105);
+  padding: 0 0.5rem;
+}
+
+.mini-data svg {
+  height: 1rem;
+  fill: rgb(105, 105, 105);
 }
 
 .logo-container {
@@ -121,9 +136,11 @@ main {
 
 .logo {
   max-height: 10rem;
+  width: 10rem;
 }
 
 .logo img {
+  pointer-events: none;
   padding: 0;
   height: 10rem;
   object-fit: cover;
