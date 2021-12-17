@@ -2,7 +2,7 @@ async function weather() {
   const success = (position) => {
     const long = position.coords.longitude;
     const lat = position.coords.latitude;
-    const key = "398819ae355b4243bc7154354210311";
+    const key = "de32868fbfca4aaaae9e9c93373ad3b6	";
 
     fetch(
       `https://api.weatherbit.io/v2.0/current?lat=${lat}&lon=${long}&key=${key}&include=minutely`
